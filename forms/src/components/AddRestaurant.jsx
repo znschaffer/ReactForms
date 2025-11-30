@@ -1,92 +1,35 @@
 import { useState } from "react";
 function AddRestaurant({ updateRestaurants }) {
-  const [formData, setFormData] = useState({
-    name: "",
-    address: "",
-    phone: "",
-    cuisine: "",
-    rating: "",
-    image: "",
-  });
-
-  const handleChange = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    setFormData({ ...formData, [name]: value });
-  };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    updateRestaurants(formData);
-  };
-
   return (
-    <form onSubmit={handleSubmit}>
+    <form>
       <div>
         <label>Name:</label>
-        <input
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
+        <input type="text" name="name" required />
       </div>
 
       <div>
         <label>image:</label>
-        <input
-          type="text"
-          name="image"
-          value={formData.image}
-          onChange={handleChange}
-          required
-        />
+        <input type="text" name="image" required />
       </div>
 
       <div>
         <label>Address:</label>
-        <input
-          type="text"
-          name="address"
-          value={formData.address}
-          onChange={handleChange}
-          required
-        />
+        <input type="text" name="address" required />
       </div>
 
       <div>
         <label>Phone:</label>
-        <input
-          type="tel"
-          name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-          required
-        />
+        <input type="tel" name="phone" required />
       </div>
 
       <div>
         <label>Cuisine:</label>
-        <input
-          type="text"
-          name="cuisine"
-          value={formData.cuisine}
-          onChange={handleChange}
-          required
-        />
+        <input type="text" name="cuisine" required />
       </div>
 
       <div>
         <label>Rating:</label>
-        <input
-          type="number"
-          name="rating"
-          min="1"
-          max="5"
-          value={formData.rating}
-          onChange={handleChange}
-          required
-        />
+        <input type="number" name="rating" min="1" max="5" required />
       </div>
 
       <button type="submit">Submit</button>
